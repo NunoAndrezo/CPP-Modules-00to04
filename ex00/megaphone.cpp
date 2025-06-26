@@ -8,8 +8,8 @@ int	main(int ac, char **av)
 	{
 		while (i < ac)
 		{
-			if (i != 1)
-				std::cout << " ";
+			/*if (i != 1)
+				std::cout << " ";*/
 			j = 0;
 			while (av[i][j])
 			{
