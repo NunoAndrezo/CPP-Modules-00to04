@@ -1,5 +1,5 @@
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "../include/PhoneBook.hpp"
+#include "../include/Contact.hpp"
 
 static void	get_user_input(std::string &input);
 
@@ -9,6 +9,7 @@ int	main(int ac, char **av)
 	std::string		user_input;
 	bool		running = true;
 
+	(void)av;
 	if (ac != 1)
 		return (std::cout << "Wrong number of arguments" << std::endl, 1);
 	std::cout << "Welcome to your awesome PhoneBook 📱" << std::endl;
@@ -37,5 +38,8 @@ static void	get_user_input(std::string &input)
 	std::cout << "→ ";
 	std::getline(std::cin, input);
 	if (std::cin.eof())
-		std::cout << "\nEoF reached, Exiting..." << std::endl; exit(0);
+	{
+		std::cout << "\nEoF reached, Exiting..." << std::endl;
+		exit(0);
+	}
 }

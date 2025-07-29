@@ -1,4 +1,4 @@
-#include "PhoneBook.hpp"
+#include "../include/PhoneBook.hpp"
 #include <iostream>
 #include <limits>
 #include <iomanip>
@@ -13,9 +13,7 @@ void PhoneBook::addContact()
 	{
 		index = count % 8; // overwrite oldest
 	}
-
 	contacts[index].setContact();
-
 	if (contacts[index].isEmpty())
 	{
 		std::cout << "Empty contact not saved!" << std::endl;
