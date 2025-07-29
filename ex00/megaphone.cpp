@@ -8,8 +8,9 @@ int	main(int ac, char **av)
 	{
 		while (i < ac)
 		{
-			/*if (i != 1)
-				std::cout << " ";*/
+			//if (i != 1)
+			//	std::cout << " ";
+			// in the examples given, there's no spaces.
 			j = 0;
 			while (av[i][j])
 			{

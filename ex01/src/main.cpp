@@ -1,15 +1,14 @@
-#include "phonebook.hpp"
-#include "contact.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-static void	get_user_input(string &input);
+static void	get_user_input(std::string &input);
 
 int	main(int ac, char **av)
 {
 	PhoneBook	phonebook;
-	string		user_input;
+	std::string		user_input;
 	bool		running = true;
 
-	user_input = av[0];
 	if (ac != 1)
 		return (std::cout << "Wrong number of arguments" << std::endl, 1);
 	std::cout << "Welcome to your awesome PhoneBook 📱" << std::endl;
@@ -18,23 +17,25 @@ int	main(int ac, char **av)
 	{
 		user_input.clear();
 		get_user_input(user_input);
-		//if (correct_option())
-		//else if ()
-		//{
-		//	running = 0;
-		//	continue;
-		//}
+		if (user_input == "ADD")
+			phonebook.addContact();
+		else if (user_input == "SEARCH")
+			phonebook.searchContacts();
+		else if (user_input == "EXIT")
+			running = false;
+		else
+			std::cout << "Invalid Command. Try again (case sensitive)" << std::endl;
 	}
-	if (running)
-	{
-		//fazer para o ctrl D
-	}
+	std::cout << "Bye bye!" << std::endl;
 	return (0);
 }
 
-static void	get_user_input(string &input)
+static void	get_user_input(std::string &input)
 {
-	std::cout << "Please write one of the following options:" << std::endl;
+	std::cout << "\nPlease write one of the following options:" << std::endl;
 	std::cout << "ADD, SEARCH or EXIT" << std::endl;
-	std::cin >> input;
+	std::cout << "→ ";
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		std::cout << "\nEoF reached, Exiting..." << std::endl; exit(0);
 }
