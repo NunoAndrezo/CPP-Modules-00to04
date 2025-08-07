@@ -5,20 +5,54 @@
 void Contact::setContact()
 {
 	std::cout << "First Name: ";
-	std::getline(std::cin, firstName);
-	std::cout << "Last Name: ";
-	std::getline(std::cin, lastName);
-	std::cout << "Nickname: ";
-	std::getline(std::cin, nickname);
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, phoneNumber);
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, darkestSecret);
-
-	if (std::cin.eof())
+	while (firstName.size() == 0)
 	{
-		std::cout << "\nExiting..." << std::endl;
-		exit(0);
+		std::getline(std::cin, firstName);
+		if (std::cin.eof())
+		{
+			std::cout << "\nCtrl+D caught, Exiting..." << std::endl;
+			exit(0);
+		}
+	}
+	std::cout << "Last Name: ";
+	while (lastName.size() == 0)
+	{
+		std::getline(std::cin, lastName);
+		if (std::cin.eof())
+		{
+			std::cout << "\nCtrl+D caught, Exiting..." << std::endl;
+			exit(0);
+		}
+	}
+	std::cout << "Nickname: ";
+	while (nickName.size() == 0)
+	{
+		std::getline(std::cin, nickName);
+		if (std::cin.eof())
+		{
+			std::cout << "\nCtrl+D caught, Exiting..." << std::endl;
+			exit(0);
+		}
+	}
+	std::cout << "Phone Number: ";
+	while (phoneNumber.size() == 0)
+	{
+		std::getline(std::cin, phoneNumber);
+		if (std::cin.eof())
+		{
+			std::cout << "\nCtrl+D caught, Exiting..." << std::endl;
+			exit(0);
+		}
+	}
+	std::cout << "Darkest Secret: ";
+	while (darkestSecret.size() == 0)
+	{
+		std::getline(std::cin, darkestSecret);
+		if (std::cin.eof())
+		{
+			std::cout << "\nCtrl+D caught, Exiting..." << std::endl;
+			exit(0);
+		}
 	}
 }
 
@@ -58,7 +92,7 @@ void Contact::displaySummary(int index) const
 	}
 
 	// Nickname
-	field = nickname;
+	field = nickName;
 	if (field.length() > 10)
 	{
 		std::cout << field.substr(0, 9) + "." << "|";
@@ -75,7 +109,7 @@ void Contact::displayFull() const
 {
 	std::cout << "First Name: " << firstName << std::endl;
 	std::cout << "Last Name: " << lastName << std::endl;
-	std::cout << "Nickname: " << nickname << std::endl;
+	std::cout << "Nickname: " << nickName << std::endl;
 	std::cout << "Phone Number: " << phoneNumber << std::endl;
 	std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
