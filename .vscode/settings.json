@@ -100,5 +100,10 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp"
-  }
+  },
+"editor.insertSpaces": false,
+"editor.detectIndentation": false,
+"editor.overtypeCursorStyle": "line",
+"editor.cursorStyle": "line",
+"editor.cursorBlinking": "phase"
 }
