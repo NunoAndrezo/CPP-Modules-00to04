@@ -1,4 +1,4 @@
-NAME		=	zombies
+NAME		=	Zombies
 
 CC			=	c++
 
