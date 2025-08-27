@@ -105,5 +105,6 @@
 "editor.detectIndentation": false,
 "editor.overtypeCursorStyle": "line",
 "editor.cursorStyle": "line",
-"editor.cursorBlinking": "phase"
+"editor.cursorBlinking": "phase",
+"editor.autoClosingBrackets": "never"
 }
