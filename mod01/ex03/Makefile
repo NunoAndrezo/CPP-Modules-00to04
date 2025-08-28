@@ -1,4 +1,4 @@
-NAME		=	hi_this_is_brain
+NAME		=	humans
 
 CC			=	c++
 
@@ -19,7 +19,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	main.cpp
+SRC_FILES	=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
 #paths
