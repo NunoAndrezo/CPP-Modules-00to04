@@ -10,11 +10,13 @@ class Zombie
 		std::string name;
 	public:
 		Zombie();
-		Zombie(std::string name);
+		Zombie(const std::string &name);
 		~Zombie();
-		void announce(std::string name);
+
+		void announce();
+		void setName(const std::string &name);
 };
 
-Zombie	*zombieHorde(int N, std::string name);
+Zombie	*zombieHorde(int N, std::string &name);
 
 #endif

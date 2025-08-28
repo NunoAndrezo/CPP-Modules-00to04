@@ -1,16 +1,26 @@
 #include "../inc/Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie()
+{
+	this->name = "";
+}
+
+Zombie::Zombie(const std::string &name)
 {
 	this->name = name;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << "is dead :(" << std::endl;
+	std::cout << this->name << " is dead :(" << std::endl;
 }
 
-void	Zombie::announce(std::string name)
+void	Zombie::announce()
 {
-	std::cout << name << ": Bonjour! I want to eat Braiii!11!inz!" << std::endl;
+	std::cout << this->name << ": Bonjour! I want to eat Braiii!11!inz!" << std::endl;
+}
+
+void	Zombie::setName(const std::string &name)
+{
+	this->name = name;
 }
