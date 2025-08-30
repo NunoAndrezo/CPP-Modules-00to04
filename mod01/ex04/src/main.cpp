@@ -14,9 +14,12 @@ int	main(int ac, char **av)
 	}
 	else
 		return (std::cout << "Wrong number of arguments!" << std::endl << "Correct example: ./<exec> <filename> <string to be replaced> <string to replace>" << std::endl, 1);
+	std::cout << "Checking if file is open" << std::endl;
 	if (file.is_open())
 	{
+		std::cout << "Closing file!" << std::endl;
 		file.close();
 	}
+	std::cout << "File is closed!" << std::endl;
 	return (0);
 }
