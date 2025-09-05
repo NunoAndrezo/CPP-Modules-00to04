@@ -1,14 +1,5 @@
 NAME		=	sed_is_for_losers
 
-# controll codes
-RESET		=	\033[0m
-GREEN		=	\033[32m
-YELLOW		=	\033[33m
-BLUE		=	\033[34m
-RED			=	\033[31m
-UP			=	\033[A
-CUT			=	\033[K
-
 CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98
@@ -18,18 +9,30 @@ SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	inc/
 
+# controll codes
+RESET		=	\033[0m
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+BLUE		=	\033[34m
+RED			=	\033[31m
+UP			=	\033[A
+CUT			=	\033[K
+
 #source files
-SRC_FILES	=	$(wildcard src/*.cpp)
+SRC_FILES	=	main.cpp parser.cpp files_handler.cpp
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
+#paths
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 #all rule
 all: $(NAME)
 
 #compile the executable
-$(NAME): $(OBJ_FILES)
+$(NAME): $(OBJ)
 	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJ_FILES) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
 
 #compile objects
