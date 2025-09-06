@@ -59,6 +59,10 @@ fclean: clean
 	echo "$(BLUE)Deleting $(NAME)...$(RESET)"; else \
 	echo "No Executable to remove."; \
 	fi;
+	@if [ -f "copy" ]; then \
+	rm -f "copy"; \
+	echo "$(BLUE)Deleting copy.txt...$(RESET)"; \
+	fi;
 
 #re rule
 re: fclean all
