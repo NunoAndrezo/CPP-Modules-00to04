@@ -16,4 +16,5 @@ void	Harl::complain(std::string level)
 		}
 		i++;
 	}
+	std::cout << "Please write the following in the CLI ./<executable> <ERROR or INFO or WARNING or DEBUG>" << std::endl;
 }
