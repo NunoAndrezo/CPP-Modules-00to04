@@ -35,6 +35,8 @@ void	Fixed::setRawBits(int const raw)
 	this->nr_fixed_point = raw;
 }
 
+const int	Fixed::nr_fractionl_bits = 8;
+
 /*
 $> ./a.out
 Default constructor called
