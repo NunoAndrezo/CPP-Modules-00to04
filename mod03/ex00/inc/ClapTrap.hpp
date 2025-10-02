@@ -9,7 +9,7 @@ class ClapTrap
 	private:
 		std::string	name;
 		int	hit_points = 10;
-		int	energy_points = 10;
+		int energy_points = 10;
 		int	attack_damage = 0;
 	public:
 		ClapTrap(void);
@@ -20,9 +20,9 @@ class ClapTrap
 		void takeDamage(unsigned int amount); // cost 1 energy
 		// all these functions need to print a message (ex: attack): ClapTrap <Name> attacks <target>, causing <damage> points of damage!
 		std::string getName(void);
-		getHitPoins
-		getAttackDamage
-		getEnergyPoints
+		int getHitPoints(void);
+		int getAttackDamage(void);
+		int getEnergyPoints(void);
 };
 
 #endif
