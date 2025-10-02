@@ -8,9 +8,9 @@ class ClapTrap
 {
 	private:
 		std::string	name;
-		int	hit_points = 10;
-		int energy_points = 10;
-		int	attack_damage = 0;
+		int	hit_points;
+		int energy_points;
+		int	attack_damage;
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string name);	// needs to print a message to show it was called
