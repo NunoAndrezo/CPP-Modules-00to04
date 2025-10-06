@@ -1,6 +1,6 @@
 #include "../inc/ClapTrap.hpp"
 
-int	main(int ac, std::string *av)
+int	main(int ac, char **av)
 {
 /*	ClapTrap	bot1("Maximillion Pegasus");
 	ClapTrap	bot2("Seto Kaiba");*/
@@ -11,12 +11,19 @@ int	main(int ac, std::string *av)
 		std::cerr << "Thank you\n";
 		return (1);
 	}
+	std::string arv2;
+	arv2 = av[2];
 	ClapTrap	bot1(av[1]);
-	ClapTrap	bot2(av[2]);
+	ClapTrap	bot2(arv2);
 
+	for (int i = 0; i <= 10; i++)
+	{
+		bot1.attack(bot2.getName());
+		bot2.takeDamage(2);
+		bot2.beRepaired(1);
+		//bot2.
+	}
 	bot1.attack(bot2.getName());
-	bot2.takeDamage(2);
-	bot2.beRepaired(1);
-	bot2.
+	bot2.attack(bot1.getName());
 	return (0);
 }
