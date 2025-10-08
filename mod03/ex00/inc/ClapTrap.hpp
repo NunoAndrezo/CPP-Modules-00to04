@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class ClapTrap
 {
 	private:
 		std::string	name;
-		int	hit_points;
-		int energy_points;
-		int	attack_damage;
+		unsigned int	hit_points;
+		unsigned int	energy_points;
+		unsigned int	attack_damage;
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string name);	// needs to print a message to show it was called

@@ -32,9 +32,9 @@ void ClapTrap::attack(const std::string &target) // cost 1 energy
 {
 	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP.\n";
 	if(this->energy_points <= 0)
-		{std::cout << "Not enough EP, you feel tired, so you take a nap...\n"; return;}
+		{std::cout << "Not enough EP, you feel tired, so you take a nap...\n"; exit(0);}
 	if(this->hit_points <= 0)
-		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead\n"; return;}
+		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead\n"; exit(0);}
 	std::cout << "Used 1 EP to attack!\n";
 	std::cout << this->getName() << " attacks " << target << ", inflicting "<< this->getAttackDamage() << " point/s of damage!\n";
 	this->energy_points--;
@@ -53,9 +53,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP.\n";
 	if(this->energy_points <= 0)
-		{std::cout << "Not enough EP, you feel tired, so you take a nap...\n"; return;}
+		{std::cout << "Not enough EP, you feel tired, so you take a nap...\n"; exit(0);}
 	if(this->hit_points <= 0)
-		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead\n"; return;}
+		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead\n"; exit(0);}
 	std::cout << "ClapTrap " << this->getName() << " uses repair. And was able to regaining "<< amount << " HP!\n";
 	std::cout << this->getName() << " used 1 EP\n";
 	this->energy_points--;

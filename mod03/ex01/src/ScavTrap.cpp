@@ -28,7 +28,7 @@ int	ScavTrap::getAttackDamage(void){return (this->attack_damage);}
 
 int	ScavTrap::getEnergyPoints(void){return (this->energy_points);}
 
-void ScavTrap::guardGate(void){std::cout << "🛡️ Gate Keeper mode activated 🛡️\n";};
+void ScavTrap::guardGate(void){std::cout << "🛡️  Gate Keeper mode activated 🛡️\n";};
 
 void ScavTrap::attack(const std::string &target) // cost 1 energy
 {

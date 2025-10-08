@@ -21,7 +21,6 @@ int	main(int ac, char **av)
 		bot1.attack(bot2.getName());
 		bot2.takeDamage(2);
 		bot2.beRepaired(1);
-		//bot2.
 	}
 	bot1.attack(bot2.getName());
 	bot2.attack(bot1.getName());
