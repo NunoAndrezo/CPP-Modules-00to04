@@ -1,28 +1,28 @@
-#include "../inc/ScavTrap.hpp"
+#include "../inc/FlagTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+FlagTrap::FlagTrap(std::string name)
 {
 	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
+	this->energy_points = 100;
+	this->attack_damage = 30;
 	this->name = name;
 	std::cout << "Constructor from scav was called\n";
 }
 
-ScavTrap::~ScavTrap(void)
+FlagTrap::~FlagTrap(void)
 {
 	std::cout << "Default Destructor from scav was called\n";
 }
 
-ScavTrap::ScavTrap(void)
+FlagTrap::FlagTrap(void)
 {
 	std::cout << "Default Constructor from scav was called\n";
 }
 
 // Copy constructor
-ScavTrap::ScavTrap(const ScavTrap &other)
+FlagTrap::FlagTrap(const FlagTrap &other)
 {
-	std::cout << "ScavTrap: Copy Constructor was called\n";
+	std::cout << "FlagTrap: Copy Constructor was called\n";
 	this->name = other.name;
 	this->hit_points = other.hit_points;
 	this->energy_points = other.energy_points;
@@ -30,9 +30,9 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 }
 
 // Copy assignment operator
-ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+FlagTrap &FlagTrap::operator=(const FlagTrap &other)
 {
-	std::cout << "ScavTrap: Copy Assignment Operator was called\n";
+	std::cout << "FlagTrap: Copy Assignment Operator was called\n";
 	if (this != &other)
 	{
 		this->name = other.name;
@@ -43,19 +43,19 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 	return *this;
 }
 
-std::string	ScavTrap::getName(void)
+std::string	FlagTrap::getName(void)
 {
 	return (this->name);
 }
-int	ScavTrap::getHitPoints(void){return (this->hit_points);}
+int	FlagTrap::getHitPoints(void){return (this->hit_points);}
 
-int	ScavTrap::getAttackDamage(void){return (this->attack_damage);}
+int	FlagTrap::getAttackDamage(void){return (this->attack_damage);}
 
-int	ScavTrap::getEnergyPoints(void){return (this->energy_points);}
+int	FlagTrap::getEnergyPoints(void){return (this->energy_points);}
 
-void ScavTrap::guardGate(void){std::cout << "🛡️  Gate Keeper mode activated 🛡️\n";};
+void FlagTrap::highFivesGuys(void){}
 
-void ScavTrap::attack(const std::string &target) // cost 1 energy
+void FlagTrap::attack(const std::string &target) // cost 1 energy
 {
 	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP. (From Scav)\n";
 	if(this->energy_points <= 0)
@@ -67,23 +67,23 @@ void ScavTrap::attack(const std::string &target) // cost 1 energy
 	this->energy_points--;
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
+void FlagTrap::takeDamage(unsigned int amount)
 {
 	if (this->hit_points <= 0)
-		return (std::cout << "ScavTrap " << this->getName() << " is already dead\n", (void)amount);
+		return (std::cout << "FlagTrap " << this->getName() << " is already dead\n", (void)amount);
 	if (amount > this->hit_points)
 		this->hit_points = 0;
-	std::cout << "ScavTrap " << this->getName() << " loses "<< amount << " HP! It's not very effective...\n";
+	std::cout << "FlagTrap " << this->getName() << " loses "<< amount << " HP! It's not very effective...\n";
 }
 
-void ScavTrap::beRepaired(unsigned int amount)
+void FlagTrap::beRepaired(unsigned int amount)
 {
 	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP. (From Scav)\n";
 	if(this->energy_points <= 0)
 		{std::cout << "Not enough EP, you feel tired, so you take a nap... (From Scav)\n"; return;}
 	if(this->hit_points <= 0)
 		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead (From Scav)\n"; return;}
-	std::cout << "ScavTrap " << this->getName() << " uses repair. And was able to regaining "<< amount << " HP! (From Scav)\n";
+	std::cout << "FlagTrap " << this->getName() << " uses repair. And was able to regaining "<< amount << " HP! (From Scav)\n";
 	std::cout << this->getName() << " used 1 EP (From Scav)\n";
 	this->energy_points--;
 }

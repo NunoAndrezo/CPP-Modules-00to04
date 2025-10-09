@@ -8,14 +8,17 @@
 class ClapTrap
 {
 	private:
-		std::string	name;
+		std::string		name;
 		unsigned int	hit_points;
 		unsigned int	energy_points;
 		unsigned int	attack_damage;
 	public:
 		ClapTrap(void);
-		ClapTrap(std::string name);	// needs to print a message to show it was called
+		ClapTrap(const ClapTrap &other);
+		ClapTrap &operator=(const ClapTrap &other);
 		~ClapTrap(void);	// needs to print a message to show it was called
+		
+		ClapTrap(std::string name);	// needs to print a message to show it was called
 		void attack(const std::string &target); // cost 1 energy
 		void beRepaired(unsigned int amount);
 		void takeDamage(unsigned int amount); // cost 1 energy

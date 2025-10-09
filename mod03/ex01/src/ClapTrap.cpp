@@ -18,6 +18,31 @@ ClapTrap::ClapTrap(void)
 {
 	std::cout << "Default Constructor was called\n";
 }
+
+// Copy constructor
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout << "Copy Constructor was called\n";
+	this->name = other.name;
+	this->hit_points = other.hit_points;
+	this->energy_points = other.energy_points;
+	this->attack_damage = other.attack_damage;
+}
+
+// Copy assignment operator
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	std::cout << "Copy Assignment Operator was called\n";
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hit_points = other.hit_points;
+		this->energy_points = other.energy_points;
+		this->attack_damage = other.attack_damage;
+	}
+	return *this;
+}
+
 std::string	ClapTrap::getName(void)
 {
 	return (this->name);
