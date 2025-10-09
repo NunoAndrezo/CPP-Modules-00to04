@@ -6,17 +6,27 @@ FlagTrap::FlagTrap(std::string name)
 	this->energy_points = 100;
 	this->attack_damage = 30;
 	this->name = name;
-	std::cout << "Constructor from scav was called\n";
+	std::cout << "Constructor from FlagTrap was called\n";
 }
+
+/* 
+better way to do that:
+
+FlagTrap::FlagTrap(std::string name)
+	: name(name), hit_points(100), energy_points(100), attack_damage(30)
+{
+	std::cout << "Constructor from FlagTrap was called\n";
+}
+ */
 
 FlagTrap::~FlagTrap(void)
 {
-	std::cout << "Default Destructor from scav was called\n";
+	std::cout << "Default Destructor from FlagTrap was called\n";
 }
 
 FlagTrap::FlagTrap(void)
 {
-	std::cout << "Default Constructor from scav was called\n";
+	std::cout << "Default Constructor from FlagTrap was called\n";
 }
 
 // Copy constructor
@@ -47,23 +57,32 @@ std::string	FlagTrap::getName(void)
 {
 	return (this->name);
 }
+
 int	FlagTrap::getHitPoints(void){return (this->hit_points);}
 
 int	FlagTrap::getAttackDamage(void){return (this->attack_damage);}
 
 int	FlagTrap::getEnergyPoints(void){return (this->energy_points);}
 
-void FlagTrap::highFivesGuys(void){}
+void	FlagTrap::highFivesGuys(void)
+{
+	if (this->hit_points == 0)
+	{
+		std::cout << "FragTrap: " << this->name << " is dead, now he can't high five\n";
+		return ;
+	}
+	std::cout << "FragTrap-> " << this->name << ": Can I get an high five?\n";
+}
 
 void FlagTrap::attack(const std::string &target) // cost 1 energy
 {
-	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP. (From Scav)\n";
+	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP. (From Flag)\n";
 	if(this->energy_points <= 0)
-		{std::cout << "Not enough EP, you feel tired, so you take a nap... (From Scav)\n"; return;}
+		{std::cout << "Not enough EP, you feel tired, so you take a nap... (From Flag)\n"; return;}
 	if(this->hit_points <= 0)
-		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead (From Scav)\n"; return;}
+		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead (From Flag)\n"; return;}
 	std::cout << "Used 1 EP to attack!\n";
-	std::cout << this->getName() << " attacks " << target << ", inflicting "<< this->getAttackDamage() << " point/s of damage! (From Scav)\n";
+	std::cout << this->getName() << " attacks " << target << ", inflicting "<< this->getAttackDamage() << " point/s of damage! (From Flag)\n";
 	this->energy_points--;
 }
 
@@ -78,12 +97,12 @@ void FlagTrap::takeDamage(unsigned int amount)
 
 void FlagTrap::beRepaired(unsigned int amount)
 {
-	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP. (From Scav)\n";
+	std::cout << this->getName() << " has: " << this->getEnergyPoints() << " EP. (From Flag)\n";
 	if(this->energy_points <= 0)
-		{std::cout << "Not enough EP, you feel tired, so you take a nap... (From Scav)\n"; return;}
+		{std::cout << "Not enough EP, you feel tired, so you take a nap... (From Flag)\n"; return;}
 	if(this->hit_points <= 0)
-		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead (From Scav)\n"; return;}
-	std::cout << "FlagTrap " << this->getName() << " uses repair. And was able to regaining "<< amount << " HP! (From Scav)\n";
-	std::cout << this->getName() << " used 1 EP (From Scav)\n";
+		{std::cout << "Not enough HP, you fall to the ground and bleed out... You are dead (From Flag)\n"; return;}
+	std::cout << "FlagTrap " << this->getName() << " uses repair. And was able to regaining "<< amount << " HP! (From Flag)\n";
+	std::cout << this->getName() << " used 1 EP (From Flag)\n";
 	this->energy_points--;
 }
