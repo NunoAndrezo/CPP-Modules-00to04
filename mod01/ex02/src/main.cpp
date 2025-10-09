@@ -5,9 +5,9 @@
 int	main()
 {
 	std::string ola = "HI THIS IS BRAIN";
-	//std::string *stringPTR = &ola;
 	std::string &stringREF = ola;
-
+	// like this: std::string *stringPTR = &ola;
+	// or:
 	//also works, like in C language:
 	std::string *stringPTR;
 	stringPTR = &ola;
