@@ -5,7 +5,7 @@
 
 struct Animal
 {
-	private:
+	protected:
 		std::string type;
 
 	public:
@@ -13,6 +13,9 @@ struct Animal
 		Animal(const Animal &other);
 		Animal& operator=(const Animal &other);
 		~Animal();
+
+		void		makeSound();
+		std::string	getType();
 };
 
 #endif
