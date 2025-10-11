@@ -9,8 +9,8 @@ FlagTrap::FlagTrap(std::string name)
 	std::cout << "Constructor from FlagTrap was called\n";
 }
 
-/* 
-better way to do that:
+/*
+there's a better way to do that:
 
 FlagTrap::FlagTrap(std::string name)
 	: name(name), hit_points(100), energy_points(100), attack_damage(30)
