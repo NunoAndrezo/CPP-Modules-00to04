@@ -7,7 +7,7 @@ Brain::Brain(void) : i(0) {
 		this->ideas[j] = "";
 }
 
-Brain::Brain(const Brain &other) {
+Brain::Brain(const Brain &other) : i(other.i){
 	std::cout << "Brain -> Copy Constructor\n";
 	for (int j = 0; j < 100; j++)
 	{
@@ -22,6 +22,7 @@ Brain &Brain::operator=(const Brain &other) {
 		int	j = -1;
 		while (++j < 100)
 			this->ideas[j] = other.ideas[j];
+		this->i = other.i;
 	}
 	return (*this);
 }
@@ -35,8 +36,8 @@ void Brain::printIdeas(void) const {
 	{
 		if (ideas[j].empty() == false)
 		{
-			std::cout << "\033[1;32mIdea " << j << ":\033[0m ";
-			std::cout << "\033[1;36m"  << ideas[j] << "\033[0m\n";
+			std::cout << "Idea number: " << j << " ";
+			std::cout << "Idea: "<< ideas[j] << "\n";
 		}
 		else
 			break;
