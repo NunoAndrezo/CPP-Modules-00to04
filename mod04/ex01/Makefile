@@ -24,6 +24,7 @@ SRC_FILES	=	main.cpp \
 				Dog.cpp \
 				Cat.cpp \
 				WrongAnimal.cpp \
+				Brain.cpp \
 				WrongCat.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
